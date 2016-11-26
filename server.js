@@ -31,6 +31,7 @@ I will respond to the following messages:
 
 // response to the user typing "help"
 slapp.message('help', ['mention', 'direct_message'], (msg) => {
+  console.log(`help message`);
   msg.say(HELP_TEXT)
 })
 
@@ -108,6 +109,7 @@ slapp.message('attachment', ['mention', 'direct_message'], (msg) => {
 // Catch-all for any other responses not handled above
 slapp.message('.*', ['direct_mention', 'direct_message'], (msg) => {
   // respond only 40% of the time
+  console.log(`random message`);
   if (Math.random() < 0.4) {
     msg.say([':wave:', ':pray:', ':raised_hands:'])
   }
